@@ -1,0 +1,31 @@
+<div class="container mt-3">
+    <h1 class="display-6 animated fadeIn fast">{{heroe.nombre | uppercase}} <small class="text-body-secondary">({{heroe.aparicion | date:'y'}})</small></h1>
+    <hr>
+    <div class="container">
+        <div class="row animated fadeIn">
+            <div class="card w-50 col ">
+                <div class="card-body">
+                    <img [src]="heroe.img" class="img-fluid animate__animated animate__flipInY" [alt]="heroe.nombre">
+                    <br><br>
+                    <div class=" d-grid gap-2 ">
+                        <a [routerLink]="[ '/heroes'] " class="btn btn-outline-danger ">Regresar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 ">
+                <h3>{{heroe.nombre}}</h3>
+                <hr>
+                <p class="text-justify">{{heroe.bio}}</p>
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <h3>Casa:</h3>
+                    </div>
+                    <div>
+                        <img *ngIf="heroe.casa =='DC'" class="img-fluid img-logo" src="assets/img/dc_logo.png" alt="DC" style="width: 65px;">
+                        <img *ngIf="heroe.casa =='Marvel'" class="img-fluid img-logo" src="assets/img/marvel_logo.png" alt="Marvel" style="width: 120px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

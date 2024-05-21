@@ -1,0 +1,22 @@
+<div class="mt-2">
+    <h1 class="display-4 animated fadeIn fast">Héroes <small>Marvel y DC</small></h1>
+    <hr>
+
+    <div class="row row-cols-4 ">
+        <!---->
+        <div class="col animated fadeIn" *ngFor="let heroe of heroes; let i = index">
+            <div class="card mb-3 animate__animated animate__slideInUp">
+                <!--Dos formas de poner los atributos-->
+                <img [src]="heroe.img" class="card-img-top" alt="{{ heroe.nombre }}">
+                <div class="card-body text">
+                    <h5 class="card-title">{{ heroe.nombre }}</h5>
+                    <p class="card-text justify">{{ heroe.bio }}</p>
+                    <p class="card-text center"><small class="text-body-secondary">{{ heroe.aparicion }}</small></p>
+                    <div class="d-grid gap-2">
+                        <button (click)="VerHeroe(i)" type="button" class="btn btn-outline-primary">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
